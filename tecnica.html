@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Técnica · Víctor Benítez</title>
+  <meta name="description" content="La técnica de Víctor Benítez: imprimación, albayalde, arena de playa y veladuras, como en los talleres del siglo XVII.">
+  <meta name="theme-color" content="#f5f1ea">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
+      <span class="monogram" aria-hidden="true">VB</span>
+      <span class="nav__name">Víctor Benítez</span>
+    </a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+      <span class="sr-only">Abrir menú</span>
+      <span></span><span></span>
+    </button>
+    <nav class="nav__links" id="menu" aria-label="Principal">
+      <a href="obra.html">Obra</a>
+      <a href="sobre.html">Sobre Víctor</a>
+      <a href="tecnica.html" aria-current="page">Técnica</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="pagina">
+    <header class="cabecera">
+      <p class="eyebrow">El oficio</p>
+      <h1>Técnica</h1>
+      <p class="cabecera__intro">Víctor pinta como en los talleres del siglo XVII: cuatro pasos, en este orden, y sin atajos.</p>
+    </header>
+
+    <ol class="pasos">
+      <li class="paso">
+        <svg class="paso__icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M16 8h32v40H16z"/><path d="M22 48l-6 12M42 48l6 12M32 48v12"/><path d="M22 16l20 24M30 16l12 14M22 26l10 12"/>
+        </svg>
+        <p class="paso__num">01</p>
+        <h2>La imprimación</h2>
+        <p>Lienzo de lino encolado y una preparación de tierras rojizas, la llamada <em>tierra de Sevilla</em>, como en los talleres donde se formó Velázquez.</p>
+      </li>
+      <li class="paso">
+        <svg class="paso__icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M8 50h48M12 50c2-6 8-8 20-8s18 2 20 8"/><path d="M27 42l3-26h4l3 26"/><path d="M28 16c0-4 8-4 8 0"/>
+        </svg>
+        <p class="paso__num">02</p>
+        <h2>El albayalde</h2>
+        <p>Blanco de plomo molido en aceite de linaza. Es denso, cálido y flexible: da a las carnaciones y a los paños una luz que ningún blanco moderno imita.</p>
+      </li>
+      <li class="paso">
+        <svg class="paso__icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M6 26c6-5 11-5 17 0s11 5 17 0 11-5 18 0"/><path d="M6 36c6-5 11-5 17 0s11 5 17 0 11-5 18 0"/><circle cx="14" cy="50" r="1.2"/><circle cx="24" cy="54" r="1"/><circle cx="33" cy="49" r="1.2"/><circle cx="42" cy="54" r="1"/><circle cx="51" cy="50" r="1.2"/>
+        </svg>
+        <p class="paso__num">03</p>
+        <h2>La arena</h2>
+        <p>Arena de playa —Bolonia, Matalascañas, Sanlúcar— lavada, tamizada y mezclada con el óleo, para que la materia tenga cuerpo y la luz se quiebre en la superficie.</p>
+      </li>
+      <li class="paso">
+        <svg class="paso__icon" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M10 14h30v30H10z"/><path d="M18 22h30v30H18z"/><path d="M26 30h30v30H26z"/>
+        </svg>
+        <p class="paso__num">04</p>
+        <h2>Las veladuras</h2>
+        <p>Capas finas y transparentes, una sobre otra, con días de secado entre ellas. La pintura se construye despacio, como se construye la sombra.</p>
+      </li>
+    </ol>
+  </main>
+
+  <footer class="footer">
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Víctor Benítez &nbsp;·&nbsp; Sevilla &nbsp;·&nbsp; <span data-year>MMXXVI</span></p>
+    <p class="footer__nota">Obras y textos provisionales. Imágenes de dominio público (Wikimedia Commons) usadas sólo como muestra del diseño.</p>
+  </footer>
+
+  <script src="js/obras.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,10 +1,11 @@
 /* ==========================================================================
-   Ficha de obra: lee ?id= de la URL y pinta la obra correspondiente
+   Ficha de un cuadro: lee ?id= de la URL y pinta la obra correspondiente
    ========================================================================== */
 (function () {
   "use strict";
 
-  const { romano, esc, finePointer } = window.VB;
+  const { romano, esc } = window.VB;
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const OBRAS = window.OBRAS || [];
   const SERIES = window.SERIES || {};
   const $ = (sel) => document.querySelector(sel);
@@ -18,7 +19,7 @@
       <div class="no-encontrada">
         <p class="eyebrow">Obra no encontrada</p>
         <h1>Este cuadro se ha perdido en la penumbra</h1>
-        <a class="btn" href="index.html#obra">Volver a la obra</a>
+        <a class="btn" href="obra.html">Volver a la obra</a>
       </div>`;
     $("[data-paginacion]").remove();
     return;
@@ -56,19 +57,13 @@
   if (obra.credito) credito.textContent = `Imagen provisional: ${obra.credito} Dominio público, vía Wikimedia Commons.`;
   else credito.remove();
 
-  /* ---------- Imagen con aparición ---------- */
+  /* ---------- Imagen ---------- */
 
-  const marco = $("[data-marco]");
   const img = $("[data-imagen]");
-  const texto = $(".ficha-obra__texto");
   img.width = obra.w;
   img.height = obra.h;
   img.alt = `${obra.titulo}, ${obra.anio}. ${obra.tecnica}.`;
   img.src = grande;
-
-  const mostrar = () => { marco.classList.add("is-ready"); texto.classList.add("is-ready"); };
-  (img.decode ? img.decode() : Promise.resolve()).then(mostrar, mostrar);
-  setTimeout(() => texto.classList.add("is-ready"), 300);
 
   /* ---------- Lupa ---------- */
 
@@ -103,13 +98,12 @@
     visorImg.src = grande;
     visor.hidden = false;
     document.body.style.overflow = "hidden";
-    requestAnimationFrame(() => visor.classList.add("is-open"));
     $("[data-visor-cerrar]").focus();
   };
   const cerrar = () => {
-    visor.classList.remove("is-open", "is-zoom");
+    visor.classList.remove("is-zoom");
+    visor.hidden = true;
     document.body.style.overflow = "";
-    setTimeout(() => { visor.hidden = true; }, 450);
     boton.focus();
   };
   const origen = (e) => {
@@ -134,7 +128,7 @@
   const prev = OBRAS[(indice - 1 + OBRAS.length) % OBRAS.length];
   const next = OBRAS[(indice + 1) % OBRAS.length];
   const enlace = (o, etiqueta) => `
-    <a href="obra.html?id=${encodeURIComponent(o.id)}">
+    <a href="cuadro.html?id=${encodeURIComponent(o.id)}">
       <img src="img/obras/thumbs/${o.id}.jpg" alt="" loading="lazy">
       <span>
         <span class="eyebrow">${etiqueta}</span>
@@ -150,8 +144,7 @@
     }
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       const destino = e.key === "ArrowLeft" ? prev : next;
-      document.body.classList.add("is-leaving");
-      setTimeout(() => { location.href = `obra.html?id=${encodeURIComponent(destino.id)}`; }, 420);
+      location.href = `cuadro.html?id=${encodeURIComponent(destino.id)}`;
     }
   });
 })();

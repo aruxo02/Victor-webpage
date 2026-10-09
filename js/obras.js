@@ -9,6 +9,9 @@
  * "w" y "h" son el ancho y alto en píxeles de la imagen grande
  * (sirven para reservar el hueco y que la página no "salte").
  *
+ * "destacada: true" hace que la obra salga en la portada (se muestran
+ * las tres primeras obras destacadas).
+ *
  * IMPORTANTE: de momento las obras son INVENTADAS y las imágenes son
  * cuadros de dominio público de Wikimedia Commons, usados sólo para
  * ver el diseño. El campo "credito" indica de dónde sale cada imagen;
@@ -26,6 +29,7 @@ window.SERIES = {
 window.OBRAS = [
   {
     id: "san-jeronimo-en-la-penumbra",
+    destacada: true,
     titulo: "San Jerónimo en la penumbra",
     anio: 2025,
     serie: "tenebrae",
@@ -62,6 +66,7 @@ window.OBRAS = [
   },
   {
     id: "cordero-de-dios",
+    destacada: true,
     titulo: "Agnus Dei",
     anio: 2025,
     serie: "sacra",
@@ -152,6 +157,7 @@ window.OBRAS = [
   },
   {
     id: "temporal-frente-a-matalascanas",
+    destacada: true,
     titulo: "Temporal frente a Matalascañas",
     anio: 2026,
     serie: "mar",

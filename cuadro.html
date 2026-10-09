@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Obra · Víctor Benítez</title>
-  <meta name="description" content="Catálogo de la obra de Víctor Benítez: bodegones, santos en penumbra, vanitas y marinas.">
+  <meta name="description" content="Obra de Víctor Benítez, pintor sevillano.">
   <meta name="theme-color" content="#f5f1ea">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,15 +30,38 @@
     </nav>
   </header>
 
-  <main class="pagina">
-    <header class="cabecera">
-      <p class="eyebrow">Catálogo</p>
-      <h1>Obra</h1>
-      <p class="cabecera__intro">Bodegones, santos en penumbra, vanitas y marinas. Pulsa sobre un cuadro para ver su ficha técnica y leer su historia.</p>
-    </header>
-    <div class="filtros" role="group" aria-label="Filtrar por serie" data-filtros></div>
-    <div class="galeria" data-galeria aria-live="polite"></div>
+  <main class="ficha-obra" data-obra>
+    <div class="ficha-obra__visual">
+      <figure class="ficha-obra__pared">
+        <button class="ficha-obra__ampliar" type="button" data-ampliar aria-label="Ver la obra a pantalla completa">
+          <img data-imagen alt="">
+          <span class="lupa" aria-hidden="true" data-lupa></span>
+        </button>
+      </figure>
+      <p class="ficha-obra__pista eyebrow">Pulsa para ampliar</p>
+    </div>
+
+    <article class="ficha-obra__texto">
+      <a class="volver" href="obra.html">← Volver al catálogo</a>
+      <p class="eyebrow" data-cat></p>
+      <h1 class="ficha-obra__titulo" data-titulo></h1>
+      <dl class="ficha" data-ficha></dl>
+      <p class="eyebrow ficha-obra__subtitulo">Sobre la obra</p>
+      <div class="prosa" data-prosa></div>
+      <p class="cita" data-cita></p>
+      <p class="credito" data-credito></p>
+    </article>
   </main>
+
+  <nav class="paginacion" aria-label="Otras obras" data-paginacion></nav>
+
+  <div class="visor" data-visor hidden>
+    <button class="visor__cerrar" type="button" data-visor-cerrar aria-label="Cerrar">×</button>
+    <div class="visor__lienzo" data-visor-lienzo>
+      <img alt="" data-visor-img>
+    </div>
+    <p class="visor__pista eyebrow">Pulsa para acercar · Esc para salir</p>
+  </div>
 
   <footer class="footer">
     <span class="ornament" aria-hidden="true"></span>
@@ -48,5 +71,6 @@
 
   <script src="js/obras.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/cuadro.js"></script>
 </body>
 </html>
