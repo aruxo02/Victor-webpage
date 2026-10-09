@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Obra · Víctor Benítez</title>
+  <meta name="description" content="Obra de Víctor Benítez, pintor sevillano.">
+  <meta name="theme-color" content="#f5f1ea">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-obra">
+  <div class="telon" aria-hidden="true"></div>
+
+  <header class="nav is-solid" data-nav>
+    <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
+      <span class="monogram" aria-hidden="true">VB</span>
+      <span class="nav__name">Víctor Benítez</span>
+    </a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+      <span class="sr-only">Abrir menú</span>
+      <span></span><span></span>
+    </button>
+    <nav class="nav__links" id="menu" aria-label="Principal">
+      <a href="index.html#obra">Obra</a>
+      <a href="index.html#sobre">Sobre Víctor</a>
+      <a href="index.html#oficio">Técnica</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="ficha-obra" data-obra>
+    <div class="ficha-obra__visual">
+      <figure class="ficha-obra__pared" data-marco>
+        <button class="ficha-obra__ampliar" type="button" data-ampliar aria-label="Ver la obra a pantalla completa">
+          <img data-imagen alt="">
+          <span class="lupa" aria-hidden="true" data-lupa></span>
+        </button>
+      </figure>
+      <p class="ficha-obra__pista eyebrow">Pulsa para ampliar</p>
+    </div>
+
+    <article class="ficha-obra__texto">
+      <a class="volver" href="index.html#obra">← Volver al catálogo</a>
+      <p class="eyebrow" data-cat></p>
+      <h1 class="ficha-obra__titulo" data-titulo></h1>
+      <dl class="ficha" data-ficha></dl>
+      <p class="eyebrow ficha-obra__subtitulo">Sobre la obra</p>
+      <div class="prosa" data-prosa></div>
+      <p class="cita" data-cita></p>
+      <p class="credito" data-credito></p>
+    </article>
+  </main>
+
+  <nav class="paginacion" aria-label="Otras obras" data-paginacion></nav>
+
+  <footer class="footer">
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Víctor Benítez &nbsp;·&nbsp; Sevilla &nbsp;·&nbsp; <span data-year>MMXXVI</span></p>
+    <p class="footer__nota">Obras y textos provisionales. Imágenes de dominio público (Wikimedia Commons) usadas sólo como muestra del diseño.</p>
+  </footer>
+
+  <div class="visor" data-visor hidden>
+    <button class="visor__cerrar" type="button" data-visor-cerrar aria-label="Cerrar">×</button>
+    <div class="visor__lienzo" data-visor-lienzo>
+      <img alt="" data-visor-img>
+    </div>
+    <p class="visor__pista eyebrow">Pulsa para acercar · Esc para salir</p>
+  </div>
+
+  <script src="js/obras.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/obra.js"></script>
+</body>
+</html>
