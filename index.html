@@ -5,37 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Víctor Benítez · Pintor</title>
   <meta name="description" content="Víctor Benítez, pintor sevillano. Pintura de raíz barroca con técnicas antiguas: albayalde, veladuras y arena de playa.">
-  <meta name="theme-color" content="#f5f1ea">
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0f0d0b">
   <meta property="og:title" content="Víctor Benítez · Pintor">
   <meta property="og:description" content="Luz, sombra y materia. Pintura al modo de los maestros antiguos.">
   <meta property="og:image" content="img/hero.jpg">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="img/hero.jpg" as="image">
-  <script>
-    // La intro sólo se ve la primera vez que se entra en la web (una vez por visita)
-    try {
-      if (!sessionStorage.getItem("vb-intro") && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        document.documentElement.classList.add("con-intro");
-      }
-    } catch (e) { /* sin almacenamiento: no hay intro */ }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="intro" data-intro data-portada="san-jeronimo-en-la-penumbra">
-    <div class="intro__escena" aria-hidden="true">
-      <div class="intro__palabra"><span>Víctor</span></div>
-      <div class="intro__marco"><img alt="" data-intro-img></div>
-      <div class="intro__palabra"><span>Benítez</span></div>
-    </div>
-    <div class="intro__revelar" style="background-image:url('img/hero.jpg')" data-intro-revelar aria-hidden="true"></div>
-    <button class="intro__saltar" type="button">Saltar intro</button>
-  </div>
+<body class="page-home">
+  <div class="telon" aria-hidden="true"></div>
 
-  <header class="nav nav--portada" data-nav>
+  <header class="nav nav--oscura" data-nav>
     <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
       <span class="monogram" aria-hidden="true">VB</span>
       <span class="nav__name">Víctor Benítez</span>
@@ -53,44 +37,59 @@
   </header>
 
   <main>
-    <section class="hero">
+    <!-- ============ PORTADA ============ -->
+    <section class="hero" data-hero>
       <div class="hero__bg" style="background-image:url('img/hero.jpg')" aria-hidden="true"></div>
+      <div class="hero__lit" style="background-image:url('img/hero.jpg')" aria-hidden="true"></div>
+      <canvas class="hero__dust" aria-hidden="true"></canvas>
       <div class="hero__veil" aria-hidden="true"></div>
+
       <div class="hero__content">
         <p class="eyebrow hero__eyebrow">Pintura &nbsp;·&nbsp; Sevilla</p>
-        <h1 class="hero__title"><span>Víctor</span> <em>Benítez</em></h1>
+        <h1 class="hero__title" data-split>Víctor Benítez</h1>
         <span class="ornament hero__ornament" aria-hidden="true"></span>
         <p class="hero__lead">Luz, sombra y materia.<br>Pintura al modo de los maestros antiguos.</p>
-        <div class="hero__botones">
-          <a class="btn btn--claro" href="obra.html">Ver la obra</a>
-        </div>
+        <a class="btn btn--claro hero__cta" href="obra.html">Ver la obra</a>
       </div>
+
       <a class="hero__caption" href="cuadro.html?id=san-jeronimo-en-la-penumbra">
-        <span class="eyebrow">En portada</span>
+        <span class="eyebrow">En penumbra</span>
         <span><em>San Jerónimo en la penumbra</em>, 2025</span>
       </a>
+      <p class="hero__hint" aria-hidden="true">Mueve la luz</p>
+      <a class="hero__scroll" href="#declaracion" aria-label="Bajar"><span></span></a>
     </section>
 
-    <section class="declaracion">
-      <p class="declaracion__latin">Et lux in tenebris lucet</p>
-      <p class="declaracion__texto">«La luz brilla en las tinieblas.» Pinto como se pintaba antes: despacio, con materiales nobles y con la luz como argumento.</p>
-      <p class="eyebrow">Jn 1, 5</p>
+    <!-- ============ DECLARACIÓN ============ -->
+    <section class="declaracion" id="declaracion">
+      <p class="declaracion__latin" data-reveal>Et lux in tenebris lucet</p>
+      <p class="declaracion__texto" data-reveal style="--d:.15s">
+        «La luz brilla en las tinieblas.» Pinto como se pintaba antes: despacio,
+        con materiales nobles y con la luz como argumento.
+      </p>
+      <p class="eyebrow" data-reveal style="--d:.3s">Jn 1, 5</p>
     </section>
 
-    <section class="bloque">
-      <header class="cabecera">
-        <p class="eyebrow">Selección</p>
-        <h2>Obra destacada</h2>
-        <p class="cabecera__intro">Tres cuadros recientes. El catálogo completo, con la ficha técnica de cada obra, está en la página de obra.</p>
+    <!-- ============ OBRA DESTACADA ============ -->
+    <section class="section">
+      <header class="section__head" data-reveal>
+        <p class="section__num">Selección</p>
+        <h2 class="section__title">Obra destacada</h2>
+        <p class="section__intro">Tres cuadros recientes. El catálogo completo, con la ficha técnica de cada obra, está en la página de obra.</p>
       </header>
       <div class="galeria" data-destacadas></div>
-      <p class="bloque__pie"><a class="enlace" href="obra.html">Ver toda la obra →</a></p>
+      <p class="section__pie" data-reveal><a class="enlace" href="obra.html">Ver toda la obra →</a></p>
     </section>
 
-    <section class="bloque presentacion">
-      <img src="img/victor.jpg" alt="Víctor Benítez" width="969" height="1000" loading="lazy">
-      <div>
-        <p class="eyebrow">El pintor</p>
+    <!-- ============ SOBRE VÍCTOR (resumen) ============ -->
+    <section class="section presentacion">
+      <figure class="sobre__retrato" data-reveal>
+        <div class="marco-circulo">
+          <img src="img/victor.jpg" alt="Víctor Benítez" width="700" height="700" loading="lazy">
+        </div>
+      </figure>
+      <div data-reveal style="--d:.1s">
+        <p class="section__num">El pintor</p>
         <h2>Sobre Víctor</h2>
         <p>Sevillano, licenciado en Historia del Arte y profesor de Religión. Pinta con técnicas antiguas —albayalde, veladuras y arena de playa— con la mirada puesta en los maestros del Barroco.</p>
         <a class="enlace" href="sobre.html">Conocer su trayectoria →</a>

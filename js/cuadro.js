@@ -4,8 +4,7 @@
 (function () {
   "use strict";
 
-  const { romano, esc } = window.VB;
-  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const { romano, esc, finePointer } = window.VB;
   const OBRAS = window.OBRAS || [];
   const SERIES = window.SERIES || {};
   const $ = (sel) => document.querySelector(sel);
@@ -57,13 +56,19 @@
   if (obra.credito) credito.textContent = `Imagen provisional: ${obra.credito} Dominio público, vía Wikimedia Commons.`;
   else credito.remove();
 
-  /* ---------- Imagen ---------- */
+  /* ---------- Imagen con aparición ---------- */
 
+  const marco = $("[data-marco]");
   const img = $("[data-imagen]");
+  const texto = $(".ficha-obra__texto");
   img.width = obra.w;
   img.height = obra.h;
   img.alt = `${obra.titulo}, ${obra.anio}. ${obra.tecnica}.`;
   img.src = grande;
+
+  const mostrar = () => { marco.classList.add("is-ready"); texto.classList.add("is-ready"); };
+  (img.decode ? img.decode() : Promise.resolve()).then(mostrar, mostrar);
+  setTimeout(() => texto.classList.add("is-ready"), 300);
 
   /* ---------- Lupa ---------- */
 
@@ -98,12 +103,13 @@
     visorImg.src = grande;
     visor.hidden = false;
     document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => visor.classList.add("is-open"));
     $("[data-visor-cerrar]").focus();
   };
   const cerrar = () => {
-    visor.classList.remove("is-zoom");
-    visor.hidden = true;
+    visor.classList.remove("is-open", "is-zoom");
     document.body.style.overflow = "";
+    setTimeout(() => { visor.hidden = true; }, 450);
     boton.focus();
   };
   const origen = (e) => {
@@ -144,7 +150,8 @@
     }
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
       const destino = e.key === "ArrowLeft" ? prev : next;
-      location.href = `cuadro.html?id=${encodeURIComponent(destino.id)}`;
+      document.body.classList.add("is-leaving");
+      setTimeout(() => { location.href = `cuadro.html?id=${encodeURIComponent(destino.id)}`; }, 420);
     }
   });
 })();

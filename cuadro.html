@@ -12,8 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="nav" data-nav>
+<body class="page-cuadro">
+  <div class="telon" aria-hidden="true"></div>
+
+  <header class="nav is-solid" data-nav>
     <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
       <span class="monogram" aria-hidden="true">VB</span>
       <span class="nav__name">Víctor Benítez</span>
@@ -23,7 +25,7 @@
       <span></span><span></span>
     </button>
     <nav class="nav__links" id="menu" aria-label="Principal">
-      <a href="obra.html" aria-current="page">Obra</a>
+      <a href="obra.html" class="is-active" aria-current="page">Obra</a>
       <a href="sobre.html">Sobre Víctor</a>
       <a href="tecnica.html">Técnica</a>
       <a href="contacto.html">Contacto</a>
@@ -32,7 +34,7 @@
 
   <main class="ficha-obra" data-obra>
     <div class="ficha-obra__visual">
-      <figure class="ficha-obra__pared">
+      <figure class="ficha-obra__pared" data-marco>
         <button class="ficha-obra__ampliar" type="button" data-ampliar aria-label="Ver la obra a pantalla completa">
           <img data-imagen alt="">
           <span class="lupa" aria-hidden="true" data-lupa></span>
@@ -55,6 +57,13 @@
 
   <nav class="paginacion" aria-label="Otras obras" data-paginacion></nav>
 
+
+  <footer class="footer">
+    <span class="ornament" aria-hidden="true"></span>
+    <p>Víctor Benítez &nbsp;·&nbsp; Sevilla &nbsp;·&nbsp; <span data-year>MMXXVI</span></p>
+    <p class="footer__nota">Obras y textos provisionales. Imágenes de dominio público (Wikimedia Commons) usadas sólo como muestra del diseño.</p>
+  </footer>
+
   <div class="visor" data-visor hidden>
     <button class="visor__cerrar" type="button" data-visor-cerrar aria-label="Cerrar">×</button>
     <div class="visor__lienzo" data-visor-lienzo>
@@ -62,12 +71,6 @@
     </div>
     <p class="visor__pista eyebrow">Pulsa para acercar · Esc para salir</p>
   </div>
-
-  <footer class="footer">
-    <span class="ornament" aria-hidden="true"></span>
-    <p>Víctor Benítez &nbsp;·&nbsp; Sevilla &nbsp;·&nbsp; <span data-year>MMXXVI</span></p>
-    <p class="footer__nota">Obras y textos provisionales. Imágenes de dominio público (Wikimedia Commons) usadas sólo como muestra del diseño.</p>
-  </footer>
 
   <script src="js/obras.js"></script>
   <script src="js/main.js"></script>

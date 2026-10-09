@@ -12,8 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="nav" data-nav>
+<body class="page-interior">
+  <div class="telon" aria-hidden="true"></div>
+
+  <header class="nav is-solid" data-nav>
     <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
       <span class="monogram" aria-hidden="true">VB</span>
       <span class="nav__name">Víctor Benítez</span>
@@ -26,31 +28,23 @@
       <a href="obra.html">Obra</a>
       <a href="sobre.html">Sobre Víctor</a>
       <a href="tecnica.html">Técnica</a>
-      <a href="contacto.html" aria-current="page">Contacto</a>
+      <a href="contacto.html" class="is-active" aria-current="page">Contacto</a>
     </nav>
   </header>
 
-  <main class="pagina">
-    <header class="cabecera">
-      <p class="eyebrow">Contacto</p>
-      <h1>Hablemos</h1>
-      <p class="cabecera__intro">Para concursos, exposiciones, encargos o, simplemente, para hablar de pintura.</p>
-    </header>
-
-    <div class="contacto__datos">
-      <div class="contacto__dato">
-        <p class="eyebrow">Correo</p>
+  <main>
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contacto" id="contacto">
+      <header class="section__head" data-reveal>
+        <p class="section__num">IV &nbsp;·&nbsp; Contacto</p>
+        <h1 class="section__title">Hablemos</h1>
+        <p class="section__intro">Para concursos, exposiciones, encargos o, simplemente, para hablar de pintura.</p>
+      </header>
+      <div class="contacto__links" data-reveal style="--d:.15s">
         <a class="contacto__mail" href="mailto:victorbenitez@example.com">victorbenitez@example.com</a>
+        <a class="btn" href="#" rel="noopener">Instagram</a>
       </div>
-      <div class="contacto__dato">
-        <p class="eyebrow">Instagram</p>
-        <a class="contacto__mail" href="#">@usuario</a>
-      </div>
-      <div class="contacto__dato">
-        <p class="eyebrow">Taller</p>
-        <p class="contacto__mail">Sevilla</p>
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">

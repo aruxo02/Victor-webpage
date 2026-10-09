@@ -12,8 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="nav" data-nav>
+<body class="page-interior">
+  <div class="telon" aria-hidden="true"></div>
+
+  <header class="nav is-solid" data-nav>
     <a class="nav__brand" href="index.html" aria-label="Víctor Benítez, inicio">
       <span class="monogram" aria-hidden="true">VB</span>
       <span class="nav__name">Víctor Benítez</span>
@@ -23,21 +25,26 @@
       <span></span><span></span>
     </button>
     <nav class="nav__links" id="menu" aria-label="Principal">
-      <a href="obra.html" aria-current="page">Obra</a>
+      <a href="obra.html" class="is-active" aria-current="page">Obra</a>
       <a href="sobre.html">Sobre Víctor</a>
       <a href="tecnica.html">Técnica</a>
       <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
-  <main class="pagina">
-    <header class="cabecera">
-      <p class="eyebrow">Catálogo</p>
-      <h1>Obra</h1>
-      <p class="cabecera__intro">Bodegones, santos en penumbra, vanitas y marinas. Pulsa sobre un cuadro para ver su ficha técnica y leer su historia.</p>
-    </header>
-    <div class="filtros" role="group" aria-label="Filtrar por serie" data-filtros></div>
-    <div class="galeria" data-galeria aria-live="polite"></div>
+  <main>
+    <!-- ============ OBRA ============ -->
+    <section class="section obra" id="obra">
+      <header class="section__head" data-reveal>
+        <p class="section__num">I &nbsp;·&nbsp; Catálogo</p>
+        <h1 class="section__title">Obra</h1>
+        <p class="section__intro">Bodegones, santos en penumbra, vanitas y marinas. Pulsa sobre cualquier cuadro para ver su ficha y leer su historia.</p>
+      </header>
+
+      <div class="filtros" role="group" aria-label="Filtrar por serie" data-filtros></div>
+      <div class="galeria" data-galeria aria-live="polite"></div>
+    </section>
+
   </main>
 
   <footer class="footer">

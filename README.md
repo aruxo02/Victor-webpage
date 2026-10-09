@@ -4,10 +4,6 @@ Web portfolio de Víctor Benítez, pintor sevillano: un catálogo limpio, pensad
 presentarse a concursos, con detalles barrocos discretos (claroscuro en la portada,
 tipografía clásica, un ornamento fino).
 
-Sólo hay una animación: la intro de la portada, que se ve una vez por visita (los
-cuadros pasan dentro de un marco, entre el nombre, y el último se abre hasta llenar la
-pantalla). Se puede saltar con un clic o una tecla. El resto de la web es estático.
-
 Es una web estática (HTML + CSS + JavaScript, sin dependencias), así que funciona
 directamente en **GitHub Pages**.
 
@@ -20,7 +16,7 @@ directamente en **GitHub Pages**.
 ## Estructura
 
 ```
-index.html          Inicio: intro, portada, obra destacada y presentación
+index.html          Inicio: portada, lema, obra destacada y presentación
 obra.html           Catálogo completo con filtros por serie
 cuadro.html         Ficha de cada cuadro (cuadro.html?id=...)
 sobre.html          Sobre Víctor: foto, texto y trayectoria
@@ -28,10 +24,10 @@ tecnica.html        Técnica: los cuatro pasos del oficio
 contacto.html       Contacto
 css/styles.css      Estilos
 js/obras.js         ← El catálogo: aquí se añaden y editan las obras
-js/main.js          Menú, galerías, filtros e intro de la portada
+js/main.js          Animaciones, menú, galerías y filtros
 js/cuadro.js        Ficha del cuadro: lupa, visor a pantalla completa, anterior/siguiente
-img/hero.jpg        Imagen de la portada
-img/victor.jpg      Foto de Víctor
+img/hero.jpg        Imagen de fondo de la portada
+img/victor.jpg      Foto de Víctor (se muestra en un círculo)
 img/obras/          Imágenes grandes de las obras (~1600 px)
 img/obras/thumbs/   Miniaturas para la galería (~760 px)
 ```
@@ -52,8 +48,8 @@ hay que cambiarlo en las seis.
    - Borra la línea `credito` (sólo sirve para las imágenes provisionales).
 3. Las series disponibles están arriba del todo en `window.SERIES`; se pueden
    renombrar o añadir nuevas.
-4. Para que una obra salga en la portada, añade `destacada: true` (se muestran las
-   tres primeras destacadas).
+4. Para que una obra salga en la página de inicio, añade `destacada: true` (se
+   muestran las tres primeras destacadas).
 
 El orden del catálogo es el orden en que aparecen las obras en `obras.js`.
 
@@ -62,10 +58,9 @@ El orden del catálogo es el orden en que aparecen las obras en `obras.js`.
 - **Trayectoria**: en `sobre.html`, formación, exposiciones y premios (ahora hay
   huecos de ejemplo).
 - **Contacto**: en `contacto.html`, el correo (`victorbenitez@example.com`) y el
-  usuario de Instagram.
+  enlace de Instagram.
 - **Portada**: `img/hero.jpg` debería ser un cuadro suyo, idealmente uno oscuro con
-  un punto de luz. En `index.html`, `data-portada` (en la intro) y el pie de la
-  portada indican qué obra es.
+  un punto de luz; el pie de la portada enlaza a esa obra.
 - **Pie de página**: quitar la nota de "obras y textos provisionales".
 
 ## Verla en local

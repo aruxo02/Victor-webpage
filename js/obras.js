@@ -9,8 +9,8 @@
  * "w" y "h" son el ancho y alto en píxeles de la imagen grande
  * (sirven para reservar el hueco y que la página no "salte").
  *
- * "destacada: true" hace que la obra salga en la portada (se muestran
- * las tres primeras obras destacadas).
+ * "destacada: true" hace que la obra salga en la página de inicio (se
+ * muestran las tres primeras obras destacadas).
  *
  * IMPORTANTE: de momento las obras son INVENTADAS y las imágenes son
  * cuadros de dominio público de Wikimedia Commons, usados sólo para
